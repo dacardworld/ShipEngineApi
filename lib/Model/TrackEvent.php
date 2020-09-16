@@ -300,16 +300,16 @@ class TrackEvent implements ModelInterface, ArrayAccess
             $invalidProperties[] = "invalid value for 'latitude', must be smaller than or equal to 90.";
         }
 
-        if (!is_null($this->container['latitude']) && ($this->container['latitude'] < 0)) {
-            $invalidProperties[] = "invalid value for 'latitude', must be bigger than or equal to 0.";
+        if (!is_null($this->container['latitude']) && ($this->container['latitude'] < -90)) {
+            $invalidProperties[] = "invalid value for 'latitude', must be bigger than or equal to -90.";
         }
 
         if (!is_null($this->container['longitude']) && ($this->container['longitude'] > 180)) {
             $invalidProperties[] = "invalid value for 'longitude', must be smaller than or equal to 180.";
         }
 
-        if (!is_null($this->container['longitude']) && ($this->container['longitude'] < 0)) {
-            $invalidProperties[] = "invalid value for 'longitude', must be bigger than or equal to 0.";
+        if (!is_null($this->container['longitude']) && ($this->container['longitude'] < -180)) {
+            $invalidProperties[] = "invalid value for 'longitude', must be bigger than or equal to -180.";
         }
 
         return $invalidProperties;
@@ -625,8 +625,8 @@ class TrackEvent implements ModelInterface, ArrayAccess
         if (!is_null($latitude) && ($latitude > 90)) {
             throw new \InvalidArgumentException('invalid value for $latitude when calling TrackEvent., must be smaller than or equal to 90.');
         }
-        if (!is_null($latitude) && ($latitude < 0)) {
-            throw new \InvalidArgumentException('invalid value for $latitude when calling TrackEvent., must be bigger than or equal to 0.');
+        if (!is_null($latitude) && ($latitude < -90)) {
+            throw new \InvalidArgumentException('invalid value for $latitude when calling TrackEvent., must be bigger than or equal to -90.');
         }
 
         $this->container['latitude'] = $latitude;
@@ -657,8 +657,8 @@ class TrackEvent implements ModelInterface, ArrayAccess
         if (!is_null($longitude) && ($longitude > 180)) {
             throw new \InvalidArgumentException('invalid value for $longitude when calling TrackEvent., must be smaller than or equal to 180.');
         }
-        if (!is_null($longitude) && ($longitude < 0)) {
-            throw new \InvalidArgumentException('invalid value for $longitude when calling TrackEvent., must be bigger than or equal to 0.');
+        if (!is_null($longitude) && ($longitude < -180)) {
+            throw new \InvalidArgumentException('invalid value for $longitude when calling TrackEvent., must be bigger than or equal to -180.');
         }
 
         $this->container['longitude'] = $longitude;
