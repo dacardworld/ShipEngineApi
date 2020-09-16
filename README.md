@@ -55,11 +55,11 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/dacardworld/ShipEngineApi.git"
+      "url": "https://github.com/dacardworld/shipengineapi.git"
     }
   ],
   "require": {
-    "dacardworld/ShipEngineApi": "*@dev"
+    "dacardworld/shipengineapi": "*@dev"
   }
 }
 ```
