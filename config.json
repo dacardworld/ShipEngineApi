@@ -1,0 +1,6 @@
+{
+  "packageName": "ShipEngineApi",
+  "apiPackage": "Api",
+  "invokerPackage": "ShipEngineApi",
+  "modelPackage": "Model"
+}
