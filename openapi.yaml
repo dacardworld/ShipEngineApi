@@ -8171,7 +8171,7 @@ components:
           type: string
           readOnly: true
           example: TX
-          minLength: 2
+          minLength: 0
           description: State province
         postal_code:
           type: string
@@ -8185,6 +8185,7 @@ components:
         company_name:
           type: string
           readOnly: true
+          nullable: true
           example: Stamps.com
           minLength: 0
           description: Company Name
@@ -8200,12 +8201,14 @@ components:
         latitude:
           type: number
           format: double
+          nullable: true
           minimum: -90
           maximum: 90
           description: Latitude coordinate of tracking event.
         longitude:
           type: number
           format: double
+          nullable: true
           minimum: -180
           maximum: 180
           description: Longitude coordinate of tracking event.
@@ -9122,8 +9125,8 @@ components:
       description: A rate estimate response body
       items:
         allOf:
-          - $ref: '#/components/schemas/rate estimate'
-    rate estimate:
+          - $ref: '#/components/schemas/rate_estimate'
+    rate_estimate:
       title: rate estimate
       type: object
       description: A rate estimate
