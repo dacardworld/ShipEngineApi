@@ -10275,7 +10275,7 @@
             "type": "string",
             "readOnly": true,
             "example": 78756,
-            "minLength": 5,
+            "minLength": 0,
             "description": "Postal code"
           },
           "country_code": {

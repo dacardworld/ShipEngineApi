@@ -280,8 +280,8 @@ class TrackEvent implements ModelInterface, ArrayAccess
         if ($this->container['postal_code'] === null) {
             $invalidProperties[] = "'postal_code' can't be null";
         }
-        if ((mb_strlen($this->container['postal_code']) < 5)) {
-            $invalidProperties[] = "invalid value for 'postal_code', the character length must be bigger than or equal to 5.";
+        if ((mb_strlen($this->container['postal_code']) < 0)) {
+            $invalidProperties[] = "invalid value for 'postal_code', the character length must be bigger than or equal to 0.";
         }
 
         if (!is_null($this->container['company_name']) && (mb_strlen($this->container['company_name']) < 0)) {
@@ -482,8 +482,8 @@ class TrackEvent implements ModelInterface, ArrayAccess
     public function setPostalCode($postal_code)
     {
 
-        if ((mb_strlen($postal_code) < 5)) {
-            throw new \InvalidArgumentException('invalid length for $postal_code when calling TrackEvent., must be bigger than or equal to 5.');
+        if ((mb_strlen($postal_code) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $postal_code when calling TrackEvent., must be bigger than or equal to 0.');
         }
 
         $this->container['postal_code'] = $postal_code;
